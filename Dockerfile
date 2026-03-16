@@ -35,7 +35,10 @@ RUN addgroup -S nodejs -g 1001
 RUN adduser -S nodejs -u 1001 -G nodejs
 
 # Copiar apenas arquivos necessários
-COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/.next/standalone ./
+COPY --from=builder /app/.next/static ./.next/static
+
 COPY package.json pnpm-lock.yaml ./
 
 # Instalar somente dependências de produção
