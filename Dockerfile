@@ -48,4 +48,4 @@ USER nodejs
 
 EXPOSE 3000
 
-CMD ["node", "dist/index.cjs"]
+CMD ["sh", "-c", "HOSTNAME=0.0.0.0 exec node server.js"]
