@@ -109,7 +109,7 @@ export default function LandingPage() {
                                 placeholder="Seu melhor e-mail"
                                 inputClassName="min-w-0 flex-1 rounded-2xl bg-[#f1ede8] px-5 py-4 text-base outline-none ring-0 placeholder:text-[#66645f]/70"
                                 buttonClassName="rounded-full bg-[#9a502d] px-7 py-4 text-base font-extrabold text-white transition hover:bg-[#8b4522] disabled:cursor-not-allowed disabled:opacity-70"
-                                feedbackClassName="mt-3 text-sm font-semibold"
+                                feedbackClassName=""
                             />
                         </div>
                         <div className="mt-6 flex flex-wrap gap-3 text-sm font-semibold text-[#66645f]">
@@ -294,7 +294,7 @@ export default function LandingPage() {
                             placeholder="Email address"
                             inputClassName="min-w-0 flex-1 rounded-2xl border border-white/20 bg-white/10 px-5 py-4 text-white outline-none placeholder:text-white/60"
                             buttonClassName="rounded-full bg-white px-7 py-4 text-base font-extrabold text-[#496c57] transition hover:bg-[#caf1d7] disabled:cursor-not-allowed disabled:opacity-70"
-                            feedbackClassName="mt-3 text-sm font-semibold text-white"
+                            feedbackClassName=""
                         />
                     </div>
                 </div>
