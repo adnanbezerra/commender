@@ -5,21 +5,21 @@ const features = [
         eyebrow: "01",
         title: "Grupos privados",
         description:
-            "Compartilhe livros, filmes e achados culturais com pessoas que realmente importam para voce.",
+            "Compartilhe livros, filmes e achados culturais com pessoas que realmente importam para você.",
         tone: "bg-[#ffe4d7] text-[#8b4522]",
     },
     {
         eyebrow: "02",
-        title: "Descoberta publica",
+        title: "Descoberta pública",
         description:
-            "Explore colecoes abertas e encontre curadorias com mais voz humana e menos algoritmo.",
+            "Explore coleções abertas e encontre curadorias com mais voz humana e menos algoritmo.",
         tone: "bg-[#d9f0e2] text-[#496c57]",
     },
     {
         eyebrow: "03",
-        title: "Estetica editorial",
+        title: "Estética editorial",
         description:
-            "Uma experiencia calorosa, pensada para deixar cada recomendacao com cara de destaque.",
+            "Uma experiência calorosa, pensada para deixar cada recomendação com cara de destaque.",
         tone: "bg-[#dce6ff] text-[#536488]",
     },
 ];
@@ -64,7 +64,7 @@ export default function LandingPage() {
                 <div className="mx-auto flex h-20 w-full max-w-7xl items-center justify-between px-6">
                     <div className="flex items-center gap-10">
                         <span className="font-display text-2xl font-extrabold tracking-tight text-[#9a502d]">
-                            Recomendador
+                            Comendador
                         </span>
                         <div className="hidden items-center gap-6 text-sm font-semibold text-[#66645f] md:flex">
                             <a href="#como-funciona">Como funciona</a>
@@ -74,34 +74,34 @@ export default function LandingPage() {
                     </div>
                     <a
                         href="#espera"
-                        className="rounded-full bg-[#9a502d] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#8b4522]"
+                        className="rounded-full bg-[#9a502d] px-5 py-3 text-sm font-bold text-white! transition hover:bg-[#8b4522]"
                     >
                         Entrar na waitlist
                     </a>
                 </div>
             </nav>
 
-            <section className="relative overflow-hidden px-6 pb-24 pt-16 lg:pb-32 lg:pt-24">
+            <section
+                id="espera"
+                className="relative overflow-hidden px-6 pb-24 pt-16 lg:pb-32 lg:pt-24"
+            >
                 <div className="absolute left-0 top-12 h-72 w-72 rounded-full bg-[#ffae8a]/25 blur-3xl" />
                 <div className="absolute right-0 top-24 h-80 w-80 rounded-full bg-[#c2d5fe]/35 blur-3xl" />
                 <div className="mx-auto grid w-full max-w-7xl items-center gap-16 lg:grid-cols-[1.05fr_0.95fr]">
                     <div className="relative z-10">
                         <div className="mb-6 inline-flex rounded-full border border-[#bcb9b3]/40 bg-white/70 px-4 py-2 text-sm font-semibold text-[#66645f]">
-                            Curadoria social para leitores e cinefilos
+                            Curadoria social para leitores e cinéfilos
                         </div>
                         <h1 className="max-w-4xl font-display text-5xl font-extrabold leading-[1.02] tracking-[-0.04em] text-[#393834] sm:text-6xl lg:text-7xl">
-                            Seu proximo livro ou filme favorito, indicado por
-                            gente de verdade.
+                            Seu próximo livro ou filme favorito, indicado entre
+                            seus amigos.
                         </h1>
                         <p className="mt-6 max-w-2xl text-lg leading-8 text-[#66645f] lg:text-xl">
-                            Entre em grupos privados e colecoes publicas para
-                            descobrir recomendacoes com contexto, afeto e uma
-                            experiencia editorial que convida a ficar.
+                            Entre em grupos privados e comunidades públicas para
+                            descobrir recomendações com contexto, afeto e uma
+                            experiência editorial que convida a ficar.
                         </p>
-                        <form
-                            id="espera"
-                            className="mt-10 flex max-w-xl flex-col gap-4 rounded-[1.75rem] border border-[#ebe8e1] bg-white/80 p-4 shadow-[0_24px_80px_rgba(154,80,45,0.08)] backdrop-blur sm:flex-row"
-                        >
+                        <form className="mt-10 flex max-w-xl flex-col gap-4 rounded-[1.75rem] border border-[#ebe8e1] bg-white/80 p-4 shadow-[0_24px_80px_rgba(154,80,45,0.08)] backdrop-blur sm:flex-row">
                             <input
                                 type="email"
                                 placeholder="Seu melhor e-mail"
@@ -119,10 +119,10 @@ export default function LandingPage() {
                                 Grupos privados
                             </span>
                             <span className="rounded-full bg-[#f7f3ee] px-4 py-2">
-                                Recomendacoes com contexto
+                                Recomendações com contexto
                             </span>
                             <span className="rounded-full bg-[#f7f3ee] px-4 py-2">
-                                Lancamento em breve
+                                Lançamento em breve
                             </span>
                         </div>
                     </div>
@@ -173,16 +173,15 @@ export default function LandingPage() {
                 <div className="mx-auto w-full max-w-7xl">
                     <div className="mx-auto max-w-3xl text-center">
                         <p className="text-sm font-extrabold uppercase tracking-[0.3em] text-[#9a502d]">
-                            Por que Recomendador
+                            Por que Comendador
                         </p>
                         <h2 className="mt-5 font-display text-4xl font-extrabold tracking-[-0.04em] text-[#393834] lg:text-5xl">
-                            Uma experiencia social para quem ama cultura e
+                            Uma experiência social para quem ama cultura e
                             contexto.
                         </h2>
                         <p className="mt-5 text-lg leading-8 text-[#66645f]">
-                            A landing do Stitch sugere uma plataforma calorosa,
-                            com espaco para afinidade, descoberta e conversas
-                            melhores.
+                            Um ambiente caloroso e humano, onde amigos podem se
+                            reunir para compartilhar experiências
                         </p>
                     </div>
 
@@ -217,12 +216,8 @@ export default function LandingPage() {
                                 O que esperar
                             </p>
                             <h2 className="mt-5 font-display text-4xl font-extrabold tracking-[-0.04em] lg:text-5xl">
-                                Um feed com gosto de curadoria, nao de ruido.
+                                Um feed com gosto de curadoria, não de ruido.
                             </h2>
-                            <p className="mt-5 text-lg leading-8 text-[#66645f]">
-                                Cada card abaixo veio da screen do Stitch e foi
-                                convertido para assets locais do projeto.
-                            </p>
                         </div>
                         <a
                             href="#espera"
@@ -289,10 +284,10 @@ export default function LandingPage() {
                         Lista de espera
                     </p>
                     <h2 className="mx-auto mt-5 max-w-3xl font-display text-4xl font-extrabold tracking-[-0.04em] lg:text-6xl">
-                        Pronto para montar sua colecao cultural?
+                        Pronto para montar sua coleção cultural?
                     </h2>
                     <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-white/82">
-                        Deixe seu e-mail para saber do lancamento e garantir um
+                        Deixe seu e-mail para saber do lançamento e garantir um
                         lugar entre os primeiros convites.
                     </p>
                     <form className="mx-auto mt-10 flex max-w-2xl flex-col gap-4 sm:flex-row">
@@ -315,11 +310,7 @@ export default function LandingPage() {
                 <div className="mx-auto flex w-full max-w-7xl flex-col gap-8 text-sm text-[#66645f] md:flex-row md:items-center md:justify-between">
                     <div>
                         <p className="font-display text-xl font-extrabold text-[#9a502d]">
-                            Recomendador
-                        </p>
-                        <p className="mt-2">
-                            Landing criada a partir da screen &quot;Landing Page
-                            de Captura&quot; no Stitch.
+                            Comendador
                         </p>
                     </div>
                     <div className="flex flex-wrap gap-6 font-semibold">
