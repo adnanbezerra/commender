@@ -7,3 +7,7 @@ npm-debug.log
 pnpm-debug.log
 README.md
 .stitch
+Dockerfile
+*.log
+.env
+.env.local

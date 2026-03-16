@@ -1,24 +1,25 @@
 # ---------- Base ----------
 FROM node:20-alpine AS base
-RUN corepack enable pnpm
+WORKDIR /app
+RUN corepack enable
 
 # ---------- Dependencies ----------
 FROM base AS deps
-WORKDIR /app
 
 COPY package.json pnpm-lock.yaml ./
 
-# Dependências de sistema necessárias para build nativo
-RUN apk add --no-cache build-base
+# Dependências nativas que às vezes são necessárias em builds
+RUN apk add --no-cache libc6-compat python3 make g++
 
 RUN pnpm install --frozen-lockfile
 
 # ---------- Build ----------
 FROM base AS builder
-WORKDIR /app
 
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
+
+ENV NODE_ENV=production
 
 RUN pnpm build
 
@@ -27,25 +28,17 @@ FROM node:20-alpine AS runner
 WORKDIR /app
 
 ENV NODE_ENV=production
+ENV PORT=3000
+ENV HOSTNAME=0.0.0.0
 
-RUN corepack enable pnpm
+RUN addgroup -S nodejs -g 1001 && adduser -S nextjs -u 1001 -G nodejs
 
-# Criar usuário não-root
-RUN addgroup -S nodejs -g 1001
-RUN adduser -S nodejs -u 1001 -G nodejs
-
-# Copiar apenas arquivos necessários
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
 
-COPY package.json pnpm-lock.yaml ./
-
-# Instalar somente dependências de produção
-RUN pnpm install --prod --frozen-lockfile
-
-USER nodejs
+USER nextjs
 
 EXPOSE 3000
 
-CMD ["sh", "-c", "HOSTNAME=0.0.0.0 exec node server.js"]
+CMD ["node", "server.js"]
