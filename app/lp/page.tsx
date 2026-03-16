@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+import { WaitlistForm } from "./waitlist-form";
+
 const features = [
     {
         eyebrow: "01",
@@ -101,19 +103,15 @@ export default function LandingPage() {
                             descobrir recomendações com contexto, afeto e uma
                             experiência editorial que convida a ficar.
                         </p>
-                        <form className="mt-10 flex max-w-xl flex-col gap-4 rounded-[1.75rem] border border-[#ebe8e1] bg-white/80 p-4 shadow-[0_24px_80px_rgba(154,80,45,0.08)] backdrop-blur sm:flex-row">
-                            <input
-                                type="email"
+                        <div className="mt-10 max-w-xl rounded-[1.75rem] border border-[#ebe8e1] bg-white/80 p-4 shadow-[0_24px_80px_rgba(154,80,45,0.08)] backdrop-blur">
+                            <WaitlistForm
+                                buttonLabel="Quero acesso"
                                 placeholder="Seu melhor e-mail"
-                                className="min-w-0 flex-1 rounded-2xl bg-[#f1ede8] px-5 py-4 text-base outline-none ring-0 placeholder:text-[#66645f]/70"
+                                inputClassName="min-w-0 flex-1 rounded-2xl bg-[#f1ede8] px-5 py-4 text-base outline-none ring-0 placeholder:text-[#66645f]/70"
+                                buttonClassName="rounded-full bg-[#9a502d] px-7 py-4 text-base font-extrabold text-white transition hover:bg-[#8b4522] disabled:cursor-not-allowed disabled:opacity-70"
+                                feedbackClassName="mt-3 text-sm font-semibold"
                             />
-                            <button
-                                type="submit"
-                                className="rounded-full bg-[#9a502d] px-7 py-4 text-base font-extrabold text-white transition hover:bg-[#8b4522]"
-                            >
-                                Quero acesso
-                            </button>
-                        </form>
+                        </div>
                         <div className="mt-6 flex flex-wrap gap-3 text-sm font-semibold text-[#66645f]">
                             <span className="rounded-full bg-[#f7f3ee] px-4 py-2">
                                 Grupos privados
@@ -290,19 +288,15 @@ export default function LandingPage() {
                         Deixe seu e-mail para saber do lançamento e garantir um
                         lugar entre os primeiros convites.
                     </p>
-                    <form className="mx-auto mt-10 flex max-w-2xl flex-col gap-4 sm:flex-row">
-                        <input
-                            type="email"
+                    <div className="mx-auto mt-10 max-w-2xl">
+                        <WaitlistForm
+                            buttonLabel="Solicitar acesso"
                             placeholder="Email address"
-                            className="min-w-0 flex-1 rounded-2xl border border-white/20 bg-white/10 px-5 py-4 text-white outline-none placeholder:text-white/60"
+                            inputClassName="min-w-0 flex-1 rounded-2xl border border-white/20 bg-white/10 px-5 py-4 text-white outline-none placeholder:text-white/60"
+                            buttonClassName="rounded-full bg-white px-7 py-4 text-base font-extrabold text-[#496c57] transition hover:bg-[#caf1d7] disabled:cursor-not-allowed disabled:opacity-70"
+                            feedbackClassName="mt-3 text-sm font-semibold text-white"
                         />
-                        <button
-                            type="submit"
-                            className="rounded-full bg-white px-7 py-4 text-base font-extrabold text-[#496c57] transition hover:bg-[#caf1d7]"
-                        >
-                            Solicitar acesso
-                        </button>
-                    </form>
+                    </div>
                 </div>
             </section>
 
